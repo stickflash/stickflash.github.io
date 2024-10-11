@@ -1,0 +1,16 @@
+{
+  "name": "M5StickC Plus2 Firmware",
+  "version": "1.0.0",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "marauder.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ],
+  "manifestVersion": 1
+}

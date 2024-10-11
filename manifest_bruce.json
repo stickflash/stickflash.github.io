@@ -1,0 +1,16 @@
+{
+  "name": "M5StickC Plus2 Firmware",
+  "version": "1.6.1",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "bruce.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ],
+  "manifestVersion": 1
+}

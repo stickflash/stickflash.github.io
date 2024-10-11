@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firmware Uploader for M5StickC Plus2</title>
+    
+    <!-- Подключение ESP Web Tools -->
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    
+    <!-- Подключение CSS для темной темы -->
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #e68900;
+        }
+        .hidden {
+            display: none;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Firmware to M5StickC Plus2</h1>
+
+    <!-- Шаг 1: Выбор устройства -->
+    <div id="step1" class="step">
+        <h2>Select your device</h2>
+        <select id="deviceSelect">
+            <option value="M5StickC Plus2">M5StickC Plus2</option>
+            <!-- Можно добавить больше устройств -->
+        </select>
+        <button id="nextToStep2">Next</button>
+    </div>
+
+    <!-- Шаг 2: Выбор прошивки -->
+    <div id="step2" class="step hidden">
+        <h2>Select Firmware</h2>
+        <select id="firmwareSelect">
+            <option value="Bruce">Bruce</option>
+            <option value="Nemo">Nemo</option>
+            <option value="Marauder">Marauder</option>
+            <option value="Shark">Shark</option>
+        </select>
+        <button id="backToStep1">Back</button>
+        <button id="nextToStep3">Next</button>
+    </div>
+
+    <!-- Шаг 3: Подключение и прошивка -->
+    <div id="step3" class="step hidden">
+        <h2>Connect and Install Firmware</h2>
+        <esp-web-install-button manifest="manifest_bruce.json"></esp-web-install-button>
+        <button id="backToStep2">Back</button>
+    </div>
+
+    <!-- Отображение сообщений -->
+    <div id="output"></div>
+
+    <!-- Подключение JS -->
+    <script src="script.js"></script>
+</body>
+</html>
