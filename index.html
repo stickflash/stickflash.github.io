@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickflash</title>
+    <title>Firmware Uploader for M5StickC Plus2</title>
     
     <!-- Подключение ESP Web Tools -->
     <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
@@ -43,18 +43,16 @@
     </style>
 </head>
 <body>
-    <h1>Stickflash</h1>
+    <h1>Upload Firmware to M5StickC Plus2</h1>
 
-    <!-- Шаг 1: Выбор устройства и прошивки -->
+    <!-- Шаг 1: Выбор прошивки -->
     <div id="step1" class="step">
-        <h2>Select Device</h2>
-        <select id="deviceSelect">
-            <option value="M5StickCPlus2">M5StickC Plus2</option>
-            <option value="NodeMCU_ESP8266">NodeMCU ESP8266</option>
-        </select>
-        
+        <h2>Select Firmware</h2>
         <select id="firmwareSelect">
-            <!-- Прошивки будут обновляться через JavaScript -->
+            <option value="Bruce">Bruce</option>
+            <option value="Nemo">Nemo</option>
+            <option value="Marauder">Marauder</option>
+            <option value="Shark">Shark</option>
         </select>
         <button id="nextToStep2">Next</button>
     </div>
@@ -63,8 +61,19 @@
     <div id="step2" class="step hidden">
         <h2>Connect and Install Firmware</h2>
         <esp-web-install-button manifest="manifest_bruce.json"></esp-web-install-button>
-        <button id="backToStep1">Back</button>
+        <button id="nextToStep3">Install</button>
+        <button id="backToStep2">Back</button>
     </div>
+
+    <!-- Шаг 3: Завершение -->
+    <div id="step3" class="step hidden">
+        <h2>Installation Complete</h2>
+        <p>Your firmware has been installed successfully!</p>
+        <button id="backToStep2">Back</button>
+    </div>
+
+    <!-- Отображение сообщений -->
+    <div id="output"></div>
 
     <!-- Подключение JS -->
     <script src="script.js"></script>
