@@ -1,0 +1,16 @@
+{
+  "name": "ESP8266 Deauther Firmware",
+  "version": "2.6.1",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "deauther.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ],
+  "manifestVersion": 1
+}
