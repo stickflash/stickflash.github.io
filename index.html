@@ -47,20 +47,14 @@
 
     <!-- Шаг 1: Выбор устройства и прошивки -->
     <div id="step1" class="step">
-        <h2>Select Device and Firmware</h2>
+        <h2>Select Device</h2>
         <select id="deviceSelect">
             <option value="M5StickCPlus2">M5StickC Plus2</option>
             <option value="NodeMCU_ESP8266">NodeMCU ESP8266</option>
-            <option value="EV3">EV3</option>
         </select>
         
         <select id="firmwareSelect">
-            <option value="Bruce">Bruce (M5StickC Plus2)</option>
-            <option value="Nemo">Nemo (M5StickC Plus2)</option>
-            <option value="Marauder">Marauder (M5StickC Plus2)</option>
-            <option value="Shark">Shark (M5StickC Plus2)</option>
-            <option value="Deauther">Deauther (NodeMCU ESP8266)</option>
-            <option value="Micropython">Micropython (EV3)</option>
+            <!-- Прошивки будут обновляться через JavaScript -->
         </select>
         <button id="nextToStep2">Next</button>
     </div>
@@ -69,22 +63,6 @@
     <div id="step2" class="step hidden">
         <h2>Connect and Install Firmware</h2>
         <esp-web-install-button manifest="manifest_bruce.json"></esp-web-install-button>
-        <div id="ev3Instructions" class="hidden">
-            <h3>Download Micropython for EV3</h3>
-            <p>Click the button below to download the Micropython firmware for your EV3.</p>
-            <a href="micropython_ev3.zip" download>
-                <button>Download Micropython</button>
-            </a>
-            <p>After downloading, copy the contents to an SD card and insert it into your EV3 brick.</p>
-        </div>
-        <button id="nextToStep3">Install</button>
-        <button id="backToStep1">Back</button>
-    </div>
-
-    <!-- Шаг 3: Завершение -->
-    <div id="step3" class="step hidden">
-        <h2>Installation Complete</h2>
-        <p>Your firmware has been installed successfully!</p>
         <button id="backToStep1">Back</button>
     </div>
 
