@@ -1,0 +1,16 @@
+{
+  "name": "M5StickC Plus2 Userdemo",
+  "version": "0.1",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "userdemo.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ],
+  "manifestVersion": 1
+}
